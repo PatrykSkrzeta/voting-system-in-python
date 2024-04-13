@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container mt-5 d-flex flex-column justify-content-center align-items-center">
+    <h3 style="font-size: 4rem;">{{ poll['poll']}}</h3>
+    <p><b style="font-size: 2rem; margin-right: 1rem;">{{ poll['option1'] }}:</b> {{ poll['votes1'] }} <a class="btn btn-sm btn-success" style="margin-left: 1rem;" href=" {{url_for('vote', id=poll.name, option=1)}} ">VOTE</a> </p>
+    <p><b style="font-size: 2rem; margin-right: 1rem;">{{ poll['option2'] }}:</b> {{ poll['votes2'] }} <a class="btn btn-sm btn-success" style="margin-left: 1rem; "href=" {{url_for('vote', id=poll.name, option=2)}} ">VOTE</a> </p>
+    <p><b style="font-size: 2rem; margin-right: 1rem;">{{ poll['option3'] }}:</b> {{ poll['votes3'] }} <a class="btn btn-sm btn-success" style="margin-left: 1rem;" href=" {{url_for('vote', id=poll.name, option=3)}} ">VOTE</a> </p>
+</div>
+
+
+{% endblock %}

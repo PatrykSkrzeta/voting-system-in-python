@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container d-flex flex-column mt-5 align-items-center justify-content-center align-content-center">
+    <h3 style="font-size: 2.5rem;">Choose one of the polls to take your vote.</h3>
+    <ul style="list-style: none;">
+        {% for key, value in polls.iterrows() %}
+        <li>
+        <a class="btn btn-danger mt-4 "href="{{ url_for('polls', id=key) }}"> {{ value['poll']}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
